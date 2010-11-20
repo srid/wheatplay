@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0 10px;
   font-family: sans-serif;
-  background: #3d5981 url(dandelion.jpg) top center no-repeat;
+  background: #3d5981 top center no-repeat;
 }
 #container {
   max-width: 1200px;
