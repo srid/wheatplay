@@ -1,31 +1,3 @@
-#main.clearfix
-  :if article.version
-    %a.sha-version{ href: "/#{article.version}/#{article.name}" } Static Version
-  %h1
-    %a{href: "/" + article.name}&= article.title
-  = markdownEncode(article.markdown)
-  %hr{style:"clear:both"}
-  #disqus_thread.body
-  :script
-    var disqus_url = "http://srid.name/#{article.name}";
-  %script(src="http://disqus.com/forums/srid.name/embed.js" type="text/javascript")
-  %a(href="http://disqus.com/forums/srid.name/?url=ref")
-    View the discussion thread.
-  %a.dsq-brlink(href="http://disqus.com")
-    blog comments powered by
-    %span.logo-disqus
-      Disqus
-  :script
-    (function() {
-      var links = document.getElementsByTagName('a');
-      var query = '?';
-      for(var i = 0; i < links.length; i++) {
-        if(links[i].href.indexOf('#disqus_thread') >= 0) {
-          query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&amp;';
-        }
-      }
-      document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/srid.name/get_num_replies.js' + query + '"></' + 'script>');
-    })();
 
 
 #sidebar
@@ -125,3 +97,29 @@
               %span.versiontag&= related.node
 
   .bubble= markdownEncode(description)
+
+
+#main.clearfix
+  :if article.version
+    %a.sha-version{ href: "/#{article.version}/#{article.name}" } Static Version
+  %h1
+    %a{href: "/" + article.name}&= article.title
+  = markdownEncode(article.markdown)
+  %hr{style:"clear:both"}
+  #disqus_thread.body
+  :script
+    var disqus_url = "http://srid.name/#{article.name}";
+  %script(src="http://disqus.com/forums/srid.name/embed.js" type="text/javascript")
+  !!! %a(href="http://disqus.com/forums/srid.name/?url=ref")
+  !!!  View the discussion thread.
+  :script
+    (function() {
+      var links = document.getElementsByTagName('a');
+      var query = '?';
+      for(var i = 0; i < links.length; i++) {
+        if(links[i].href.indexOf('#disqus_thread') >= 0) {
+          query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&amp;';
+        }
+      }
+      document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/srid.name/get_num_replies.js' + query + '"></' + 'script>');
+    })();

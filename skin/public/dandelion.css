@@ -262,8 +262,8 @@ body {
 }
 #sidebar .headshot {
   float: left;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   margin: 0 10px 10px 0;
   border: 2px solid rgba(200, 200, 200, 0.2);
 }
