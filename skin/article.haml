@@ -82,7 +82,7 @@
         %ul
           :each version, stat in article.log
             %li{title: stat.message}
-              %a{ href: "/#{version}/#{article.name}" }
+              %a{ href: "/#{version}/#{article.name}", rel: "nofollow" }
                 &= new Date(stat.date).toUTCString()
 
   :if article.related && article.related.length > 0
