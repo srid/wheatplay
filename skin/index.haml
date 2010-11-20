@@ -11,7 +11,6 @@
           &=" by " + article.author.name
           :if article.node
             %span.versiontag&= article.node
-  .bubble= markdownEncode(description)
 
 #main.clearfix
   :each article in articles.slice(0,15)
